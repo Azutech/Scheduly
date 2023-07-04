@@ -13,7 +13,7 @@ server.use(express.urlencoded({ extended: true }));
 
 server.get('/', (req: Request, res: Response) => {
     res.status(200).json({
-        message: 'Welcome to Scheduly \n Helps get there on time with reminders',
+        message: 'Welcome to Scheduly \n Helps get you there on time with reminders',
     })
     log.info('BOOM 🔥🔥')
 })
