@@ -1,1 +1,23 @@
 2023-07-04T11:28:59.672Z [boom] info: Express is listening at http://localhost:3000
+2023-07-04T14:39:56.592Z [boom] info: Express is listening at http://localhost:3000
+2023-07-04T14:39:56.619Z [boom] info: Connected to Swift DB on MongoDB cluster
+2023-07-04T14:40:32.378Z [boom] info: Express is listening at http://localhost:3000
+2023-07-04T14:40:32.388Z [boom] info: Connected to Sche DB on MongoDB cluster
+2023-07-04T14:40:34.030Z [boom] info: Express is listening at http://localhost:3000
+2023-07-04T14:40:34.038Z [boom] info: Connected to Scheduly DB on MongoDB cluster
+2023-07-04T14:40:44.701Z [boom] info: Express is listening at http://localhost:3000
+2023-07-04T14:40:44.710Z [boom] info: Connected to Scheduly DB on MongoDB 
+2023-07-04T14:40:48.963Z [boom] info: Express is listening at http://localhost:3000
+2023-07-04T14:40:48.971Z [boom] info: Connected to Scheduly DB on MongoDB local 
+2023-07-04T14:40:52.154Z [boom] info: Express is listening at http://localhost:3000
+2023-07-04T14:40:52.162Z [boom] info: Connected to Scheduly DB on MongoDB local server
+2023-07-04T15:11:59.629Z [boom] info: Express is listening at http://localhost:3000
+2023-07-04T15:11:59.641Z [boom] info: Connected to Scheduly DB on MongoDB local server
+2023-07-04T15:24:46.174Z [boom] info: Express is listening at http://localhost:3000
+2023-07-04T15:24:46.193Z [boom] info: Connected to Scheduly DB on MongoDB local server
+2023-07-04T15:24:56.865Z [boom] info: Express is listening at http://localhost:3000
+2023-07-04T15:24:56.873Z [boom] info: Connected to Scheduly DB on MongoDB local server
+2023-07-04T15:24:58.921Z [boom] info: Express is listening at http://localhost:3000
+2023-07-04T15:24:58.931Z [boom] info: Connected to Scheduly DB on MongoDB local server
+2023-07-04T15:25:33.897Z [boom] info: Express is listening at http://localhost:3000
+2023-07-04T15:25:33.907Z [boom] info: Connected to Scheduly DB on MongoDB local server
