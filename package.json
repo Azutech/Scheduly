@@ -7,7 +7,9 @@
     "format": "prettier --write \"src/**/*.ts\"",
     "dev": "nodemon src/index.ts",
     "start": "node dist/index.js",
-    "build": "npx tsc"
+    "lint": "eslint --ext .ts . --fix",
+    "build": "npx tsc",
+    "fix": "npm run format && npm run lint"
   },
   "author": "",
   "license": "ISC",
