@@ -53,7 +53,7 @@ export const getOneDriver = async (
     try {
         const getThisDriver = await Driver.findOne({ _id: id })
         if (!getThisDriver) {
-            return next(new AppError('You are able to perfrom this function', 404))
+            return next(new AppError('driver not found', 404))
         }
 
         return res.status(200).json({
@@ -61,6 +61,25 @@ export const getOneDriver = async (
             message: `this user${id} has been retrieved`,
             data: getThisDriver,
         })
+    } catch (err: any) {
+        console.error(err)
+        return next(new AppError(`Service Unavailable ${err.message}`, 503))
+    }
+}
+
+export const getAllDrivers = async (req: Request, res: Response, next: NextFunction)=> {
+    try {
+
+        const allDrivers = await Driver.find()
+        if(!allDrivers) {
+            return next(new AppError('all frivers not found', 404))
+        }
+        return res.status(202).json({
+            success: true,
+            message: 'All drivers has been retrieved',
+            data: allDrivers,
+        })
+
     } catch (err: any) {
         console.error(err)
         return next(new AppError(`Service Unavailable ${err.message}`, 503))
