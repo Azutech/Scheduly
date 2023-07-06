@@ -67,11 +67,14 @@ export const getOneDriver = async (
     }
 }
 
-export const getAllDrivers = async (req: Request, res: Response, next: NextFunction)=> {
+export const getAllDrivers = async (
+    req: Request,
+    res: Response,
+    next: NextFunction
+) => {
     try {
-
         const allDrivers = await Driver.find()
-        if(!allDrivers) {
+        if (!allDrivers) {
             return next(new AppError('all frivers not found', 404))
         }
         return res.status(202).json({
@@ -79,9 +82,27 @@ export const getAllDrivers = async (req: Request, res: Response, next: NextFunct
             message: 'All drivers has been retrieved',
             data: allDrivers,
         })
-
     } catch (err: any) {
         console.error(err)
         return next(new AppError(`Service Unavailable ${err.message}`, 503))
+    }
+}
+export const destroyDriver = async (req: Request, res: Response, next: NextFunction) => {
+    const { id } = req.params
+
+    try {
+        const removeDriver = await Driver.findOneAndDelete({_id: id})
+        if(!removeDriver) {
+            return next(new AppError('User not found', 404))
+        }
+        return res.status(200).json({
+            success: true,
+            message: `driver with this id ${id} has been deleted`,
+            data: removeDriver,
+        })
+    } catch (err: any) {
+        console.error(err)
+        return next(new AppError(`Service Unavailable ${err.message}`, 503))
+
     }
 }
