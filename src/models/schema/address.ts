@@ -16,6 +16,8 @@ export const AddressSchema = new Schema(
         },
         zipcode: {
             type: String,
+            min: [5, 'zipcode is must be 5'],
+            max: [6, 'zipcode is must be 6'],
         },
     },
     { _id: false }

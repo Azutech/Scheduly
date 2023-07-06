@@ -9,10 +9,16 @@ const driverSchema = new Schema(
         },
         email: {
             type: String,
+            match: [
+                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                'Please enter a valid email',
+            ],
             required: [true, 'email is required'],
         },
-        mobileNUmber: {
-            type: String,
+        mobileNumber: {
+            type: Number,
+            min: [11, 'Digits must be 11'],
+            max: [14, 'Digits must be 14'],
             required: [true, 'Mobile number is required'],
         },
         address: {
