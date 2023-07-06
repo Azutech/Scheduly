@@ -87,12 +87,16 @@ export const getAllDrivers = async (
         return next(new AppError(`Service Unavailable ${err.message}`, 503))
     }
 }
-export const destroyDriver = async (req: Request, res: Response, next: NextFunction) => {
+export const destroyDriver = async (
+    req: Request,
+    res: Response,
+    next: NextFunction
+) => {
     const { id } = req.params
 
     try {
-        const removeDriver = await Driver.findOneAndDelete({_id: id})
-        if(!removeDriver) {
+        const removeDriver = await Driver.findOneAndDelete({ _id: id })
+        if (!removeDriver) {
             return next(new AppError('User not found', 404))
         }
         return res.status(200).json({
@@ -103,6 +107,5 @@ export const destroyDriver = async (req: Request, res: Response, next: NextFunct
     } catch (err: any) {
         console.error(err)
         return next(new AppError(`Service Unavailable ${err.message}`, 503))
-
     }
 }

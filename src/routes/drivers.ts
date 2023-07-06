@@ -3,7 +3,7 @@ import {
     registerDriver,
     getOneDriver,
     getAllDrivers,
-    destroyDriver
+    destroyDriver,
 } from '../controllers/drivers'
 
 export const driver = Router()
@@ -11,4 +11,4 @@ export const driver = Router()
 driver.post('/register', registerDriver)
 driver.get('/getUser=?/:id', getOneDriver)
 driver.get('/getall', getAllDrivers)
-driver.delete('/deleteUser=?', destroyDriver )
+driver.delete('/deleteUser=?/:id', destroyDriver)
