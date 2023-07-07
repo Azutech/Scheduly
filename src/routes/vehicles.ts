@@ -1,6 +1,14 @@
-import { Router } from 'express'
-import { createVehicle } from '../controllers/vehicles'
+import { Router } from 'express';
+import {
+	createVehicle,
+	getOneDriver,
+	getAllVehicles,
+	destroyVehicle,
+} from '../controllers/vehicles';
 
-export const vehicles = Router()
+export const vehicles = Router();
 
-vehicles.post('/registerVehicles', createVehicle)
+vehicles.post('/registerVehicles', createVehicle);
+vehicles.get('/getOneVehicles==?$/:id', getOneDriver);
+vehicles.get('/getallvehicle=?$/:id', getAllVehicles);
+vehicles.delete('/deletethisVehicle==??/:id', destroyVehicle);

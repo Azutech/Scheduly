@@ -1,14 +1,14 @@
-import { Router } from 'express'
+import { Router } from 'express';
 import {
-    registerDriver,
-    getOneDriver,
-    getAllDrivers,
-    destroyDriver,
-} from '../controllers/drivers'
+	registerDriver,
+	getOneDriver,
+	getAllDrivers,
+	destroyDriver,
+} from '../controllers/drivers';
 
-export const driver = Router()
+export const driver = Router();
 
-driver.post('/register', registerDriver)
-driver.get('/getUser=?/:id', getOneDriver)
-driver.get('/getall', getAllDrivers)
-driver.delete('/deleteUser=?/:id', destroyDriver)
+driver.post('/register', registerDriver);
+driver.get('/getUser=?/:id', getOneDriver);
+driver.get('/getall', getAllDrivers);
+driver.delete('/deleteUser=?/:id', destroyDriver);
