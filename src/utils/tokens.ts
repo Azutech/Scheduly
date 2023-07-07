@@ -1,6 +1,5 @@
 import jwt, { SignOptions } from 'jsonwebtoken';
 import dotenv from 'dotenv';
-import { SigningOptions } from 'crypto';
 
 dotenv.config();
 const privateKey = process.env.TOKEN_PRIVATE_KEY as string;
