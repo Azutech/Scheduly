@@ -31,15 +31,15 @@ export const deserializeUser = async (
 		if (!encryption) {
 			return res.status(404).json({ message: 'Invalid token' });
 		}
-        const user = await User.findById({ _id: encryption })
+		const user = await User.findById({ _id: encryption });
 
-        if (!user) {
-            return res
-                .status(404)
-                .json({ message: 'User with that token no longer exist' })
-        }
-        res.locals.user = user
-        next()
+		if (!user) {
+			return res
+				.status(404)
+				.json({ message: 'User with that token no longer exist' });
+		}
+		res.locals.user = user;
+		next();
 	} catch (err) {
 		console.error(err);
 	}

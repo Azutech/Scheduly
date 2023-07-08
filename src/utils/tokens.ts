@@ -6,8 +6,12 @@ const privateKey = process.env.TOKEN_PRIVATE_KEY as string;
 const publicKey = process.env.TOKEN_PUBLIC_KEY as string;
 const tokenExpiry = process.env.TOKEN_EXPIRY_DATE as string;
 
-export const createJwt = (payload: any, option: SignOptions) => {
-	return jwt.sign(payload, privateKey, {
+export const createJwt = (
+	payload: string | object | Buffer | undefined,
+	option?: SignOptions
+) => {
+	const jwtPayload = payload || {};
+	return jwt.sign(jwtPayload, privateKey, {
 		...(option && option),
 		expiresIn: tokenExpiry,
 	});
