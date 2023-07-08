@@ -4,7 +4,7 @@ import { Vehicle } from './vehicles';
 
 const scheduleSchema = new Schema(
 	{
-		DriverName: {
+		driverNameriverName: {
 			type: Schema.Types.ObjectId,
 			required: true,
 			ref: Driver,
