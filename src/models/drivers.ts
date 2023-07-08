@@ -17,8 +17,8 @@ const driverSchema = new Schema(
 		},
 		mobileNumber: {
 			type: Number,
-			min: [11, 'Digits must be 11'],
-			max: [14, 'Digits must be 14'],
+			minlength: [11, 'Digits must be 11'],
+			maxlength: [14, 'Digits must be 14'],
 			required: [true, 'Mobile number is required'],
 		},
 		address: {

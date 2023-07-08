@@ -9,6 +9,6 @@ import {
 export const driver = Router();
 
 driver.post('/register', registerDriver);
-driver.get('/getUser=?/:id', getOneDriver);
-driver.get('/getall', getAllDrivers);
-driver.delete('/deleteUser=?/:id', destroyDriver);
+driver.get('/getUser=/:id', getOneDriver);
+driver.get('/getallUsers==', getAllDrivers);
+driver.delete('/deleteUser=/:id', destroyDriver);
