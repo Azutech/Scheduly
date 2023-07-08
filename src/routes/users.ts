@@ -1,7 +1,8 @@
-import { Router } from 'express';
-import { registerUser , autheticateUser} from '../controllers/users';
+import { Router } from "express";
+import { getUser, getAlluser, destroyerUser } from "../controllers/user";
 
-export const user = Router();
+export const user = Router()
 
-user.post('/register==', registerUser);
-user.post('/autheticate==%low', autheticateUser);
+user.get('/getUser==%/:id', getUser)
+user.get('/getAllUser', getAlluser)
+user.get('/destroyerUser==%/:id', destroyerUser)

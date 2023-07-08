@@ -1,4 +1,4 @@
-import {CookieOptions, NextFunction, Request, Response } from 'express';
+import { CookieOptions, NextFunction, Request, Response } from 'express';
 import { User } from '../models/users';
 import { createJwt } from '../utils/tokens';
 import dotenv from 'dotenv';
@@ -7,17 +7,14 @@ import { hashString, compareHash } from '../utils/helpers';
 
 dotenv.config();
 
-const access_token = parseInt(process.env.ACCESS_TOKEN_EXPIRES_IN as string)
-
+const access_token = parseInt(process.env.ACCESS_TOKEN_EXPIRES_IN as string);
 
 const accessTokenCookieOptions: CookieOptions = {
-    expires: new Date(
-        Date.now() + access_token * 60 * 1000
-    ),
-    maxAge: access_token  * 60 * 1000,
-    httpOnly: true,
-    sameSite: 'lax',
-}
+	expires: new Date(Date.now() + access_token * 60 * 1000),
+	maxAge: access_token * 60 * 1000,
+	httpOnly: true,
+	sameSite: 'lax',
+};
 
 export const registerUser = async (
 	req: Request,
@@ -88,27 +85,23 @@ export const autheticateUser = async (
 			return next(new AppError('Invalid credentials', 401));
 		}
 
-		const validPassword = await compareHash(
-			password,
-            String(user.password )
-		);
+		const validPassword = await compareHash(password, String(user.password));
 		if (!validPassword) {
 			return next(new AppError('Invalid credentials', 401));
 		}
 
-		const access_token = createJwt({ user })
-		res.cookie('access_token', access_token, accessTokenCookieOptions)
+		const access_token = createJwt({ user });
+		res.cookie('access_token', access_token, accessTokenCookieOptions);
 		res.cookie('logged_in', true, {
-            ...accessTokenCookieOptions,
-            httpOnly: false,
-        })
+			...accessTokenCookieOptions,
+			httpOnly: false,
+		});
 
 		res.status(200).json({
-            status: 'success',
-            message: 'User logged in successfully',
-            access_token,
-        })
-
+			status: 'success',
+			message: 'User logged in successfully',
+			access_token,
+		});
 	} catch (err: any) {
 		console.error(err);
 		return next(new AppError('Service Error', 503));
