@@ -6,7 +6,7 @@ import { AppError } from "../utils/error";
 export const query = async(req: Request, res: Response, next: NextFunction) => {
     const { queryWord } = req.body
 
-    if(!query) {
+    if(!queryWord) {
         return next(new AppError('Not the results that you expected?', 404))
     }
 
