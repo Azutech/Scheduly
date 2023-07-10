@@ -51,7 +51,7 @@ export const createSchedule = async (
 		const user = await User.findOne({ _id: userId });
 		if (!user) {
 			return next(
-				new AppError(`Cinema with this id ${user} not found`, 404)
+				new AppError(`User with this id ${user} not found`, 404)
 			);
 		}
 
@@ -84,7 +84,11 @@ export const createSchedule = async (
 
 		await populateSchedule.save();
 
-		return res.status(201).json({});
+		return res.status(201).json({
+			success: true,
+			message: 'Schedule created successfully',
+			data: populateSchedule,
+		});
 	} catch (err: any) {
 		console.error(err);
 		return next(new AppError(`Service Unavailable ${err.message}`, 503));

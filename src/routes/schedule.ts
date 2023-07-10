@@ -1,7 +1,6 @@
-import { Router} from "express";
-import { createSchedule } from "../controllers/schedule";
+import { Router } from 'express';
+import { createSchedule } from '../controllers/schedule';
 
+export const schedule = Router();
 
-export const schedule = Router()
-
-schedule.post('/scheduleDrivers===yts/:id', createSchedule)
+schedule.post('/scheduleDrivers===yts/:userId', createSchedule);

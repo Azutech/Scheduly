@@ -1,6 +1,6 @@
-import { Router } from "express";
-import { query } from "../controllers/query";
+import { Router } from 'express';
+import { query } from '../controllers/query';
 
-export const search = Router()
+export const search = Router();
 
-search.post('/search===%query', query)
+search.post('/query', query);
