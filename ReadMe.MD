@@ -1,5 +1,5 @@
 # Scheduly
-This is a short description
+This is a short description of an app that creates schedules for drivers for companies
 
 ## Installation
 
