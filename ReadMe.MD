@@ -19,6 +19,7 @@ To install the project, follow these steps:
 - TypeScript: A typed superset of JavaScript.
 
 
+## Contributing
 To contribute to the project, you can:
 
 - Fork the repository
@@ -26,6 +27,10 @@ To contribute to the project, you can:
 - Make your changes and commit them: `git commit -m "Add feature-name"`
 - Push to your branch: `git push origin feature-name`
 - Create a pull request
+
+## API Documentation
+
+  Click this [link](https://documenter.getpostman.com/view/19569197/2s946bAua4) to get the full API Documentation 
 
 ## License
 [MIT] ()
